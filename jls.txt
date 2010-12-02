@@ -1,0 +1,27 @@
+#  S6 blank template package manifest
+#  Change as desired/needed
+#
+#  Questions? Comments?
+#  Send them along to the Free Web Slide Show Alternatives (S5, S6, S9 And Friends) Forum/Mailing List. 
+#  http://groups.google.com/group/webslideshow
+
+__file__.html   slides.html.erb
+__file__.css    style.css.erb
+
+# styles
+
+jls/projection.css
+jls/print.css
+jls/screen.css
+
+# javascript machinery
+
+jls/jquery.js
+jls/jquery.microsoft.js
+jls/jquery.slideshow.js
+
+# template for pdf generation
+# -- use html-to-pdf tool (such as wkhtmltopdf, prince, etc) to generate pdf
+# -- from javascript free web page
+
+__file__.pdf.html  slides.pdf.html.erb
