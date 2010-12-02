@@ -1,8 +1,12 @@
-@import url(s6/projection.css); /* required to make the slide show run at all */
+@import url(jls/projection.css); /* required to make the slide show run at all */
      
-body { font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; }
+body { 
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; 
+  background-color: black;
+  color: white;
+}
 
-a:link, a:visited { color: black; }
+a:link, a:visited { color: silver; }
 
 .slide h1 { font-size: 30pt;  }
 
@@ -17,6 +21,8 @@ a:link, a:visited { color: black; }
 
 
 .slide h2 { font-size: 28pt;  }
+
+.slide 
 
 h3 { font-size: 25pt;  }
 
@@ -61,8 +67,9 @@ ul { list-style-type: square; }
 pre { font-size: 16pt;  }
 
 .code { 
-        background-color: azure;
-        padding: 5px;
+        background-color: #001133;
+        padding: 8px;
+        border: 2px solid #445566;
       }
      
 .footnote a:first-of-type  { text-decoration: none; }
@@ -83,9 +90,35 @@ p.tiny     { font-size: 82%; }
 .help td  { font-size: 88%; }
 
  
-.step { color: silver; }
+.step { 
+  opacity: 0; 
+  -webkit-transition: opacity 0.5s ease-in;
+  -moz-transition: opacity 0.5s ease-in;
+  -o-transition: opacity 0.5s ease-in;
+}
+
+.active-slide {
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease-in;
+  -moz-transition: opacity 0.5s ease-in;
+  -o-transition: opacity 0.5s ease-in;
+}
+
+.inactive-slide {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+}
+    
+
 /* or hide next steps e.g.  .step { visibility: hidden; } */
-.stepcurrent { color: black; }
+.stepcurrent { 
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease-in;
+  -moz-transition: opacity 0.5s ease-in;
+  -o-transition: opacity 0.5s ease-in;
+}
 
 
 <%= content_for :css %>

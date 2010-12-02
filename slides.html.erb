@@ -9,12 +9,12 @@
 
 <!-- S6 style sheet links -->
 <link rel="stylesheet" href="<%= "#{@name}.css" %>" media="projection" id="styleProjection">
-<link rel="stylesheet" href="s6/screen.css"         media="screen"     id="styleScreen">
-<link rel="stylesheet" href="s6/print.css"          media="print">
+<link rel="stylesheet" href="jls/screen.css"         media="screen"     id="styleScreen">
+<link rel="stylesheet" href="jls/print.css"          media="print">
 
 <!-- S6 JS -->
-<script src="s6/jquery.js"></script>
-<script src="s6/jquery.slideshow.js"></script>
+<script src="jls/jquery.js"></script>
+<script src="jls/jquery.slideshow.js"></script>
 <script>
   $(document).ready( function() {
     Slideshow.init();
@@ -25,7 +25,7 @@
 
 <!-- Better Browser Banner for Microsoft Internet Explorer (IE) -->
 <!--[if IE]>
-<script src="s6/jquery.microsoft.js"></script>
+<script src="jls/jquery.microsoft.js"></script>
 <![endif]-->
 
 <%= content_for :head %>

@@ -7,10 +7,11 @@ var Slideshow = {};
  *   passes in a reference to from and to slide wrapped in jQuery wrapper
  */
 
-Slideshow.transition = function( $from, $to ) {
-  $from.hide();
-  $to.show();
-}
+//Slideshow.transition = function( $from, $to ) {
+  //$from.hide();
+  //$to.show();
+//}
+
 
 /***********************
  * sample custom transition using scrollUp effect
@@ -23,8 +24,10 @@ function transitionSlideUpSlideDown( $from, $to ) {
 }
 	
 function transitionFadeOutFadeIn( $from, $to ) {
-	 $from.fadeOut( 500 );
-   $to.fadeIn( 500 );			
+  $from.removeClass("active-slide").addClass("inactive-slide").bind("transitioned", function() {
+    debug("Done transitioning")
+  });
+  $to.removeClass("inactive-slide").addClass("active-slide").show();
 }
 
 function transitionScrollUp( $from, $to ) {   
@@ -44,6 +47,8 @@ function transitionScrollUp( $from, $to ) {
      $( 'body' ).css( 'overflow-y', 'auto' );
   }); 
 }
+
+Slideshow.transition = transitionFadeOutFadeIn;
 
 Slideshow.init = function( options ) {
 
@@ -152,6 +157,8 @@ Slideshow.init = function( options ) {
   if( !(cid == nid) ) {
     debug( "transition from " + cid + " to " + nid );
     Slideshow.transition( $( cid ), $( nid ) );
+  } else {
+    $( cid ).addClass("active-slide");
   }
   
   updateJumpList();
